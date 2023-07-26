@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="f4c8c897-f68f-46c6-bc18-6ad7c2c54448" basePath="train" >
+		<http:listener-connection host="localhost" port="8081" />
+	</http:listener-config>
+	<flow name="trainingFlow" doc:id="30620b9c-154a-46f7-aa76-b38700fcde19" >
+		<http:listener doc:name="Listener" doc:id="b3eda3cb-1b9b-43b1-a743-33797ab9e59d" config-ref="HTTP_Listener_config" path="path"/>
+		<logger level="INFO" doc:name="Logger" doc:id="e91120b0-db6a-45d1-a299-d552ef4ead46" message="ok ok okokokokoko"/>
+		<logger level="INFO" doc:name="Logger" doc:id="faf1b9a8-305f-45af-8b1a-e4a758c87223" message="nadandad"/>
+		<logger level="INFO" doc:name="Logger" doc:id="c1899d66-da3f-4812-9601-e65b5d10282c" message="asdwasd"/>
+		<logger level="INFO" doc:name="Logger" doc:id="80b24774-db9f-4d63-8503-df1f474a8553" message="dsawdsaw"/>
+		<logger level="INFO" doc:name="Logger" doc:id="b0e79666-bc12-42f4-aa9f-97ee9073a5e2" message="qwerty"/>
+	</flow>
+</mule>

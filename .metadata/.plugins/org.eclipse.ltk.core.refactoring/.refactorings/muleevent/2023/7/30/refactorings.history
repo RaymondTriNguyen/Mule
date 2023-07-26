@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;muleevent/src/main/mule/muleevent.xml&apos; to &apos;MuleEventjson&apos;" description="Rename resource &apos;muleevent.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/mule/muleevent.xml" name="MuleEventjson" stamp="1690305789853" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;muleevent/src/main/mule/MuleEventjson&apos; to &apos;MuleEventjson.xml&apos;" description="Rename resource &apos;MuleEventjson&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/mule/MuleEventjson" name="MuleEventjson.xml" stamp="1690305835227" updateReferences="true"/>
+</session>
