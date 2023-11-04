@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<sub-flow name="getemployeesubflowSub_Flow" doc:id="fd099387-b363-4beb-8998-806ce37f51e7" >
+		<logger level="INFO" doc:name="Logger" doc:id="755c751f-e3ee-479d-b022-4e91edef757f" message="get employee"/>
+	</sub-flow>
+</mule>

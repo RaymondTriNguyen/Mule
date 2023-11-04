@@ -1,0 +1,58 @@
+#%RAML 1.0 Library
+usage: employee
+types:
+  employee_create:
+    type: object
+    properties:
+        employeeID:
+          required: true
+          type: integer
+          example: 12345
+        employeeName:
+          required: true
+          type: string
+          example: "Huu"
+        employeeStatus:
+          required: true
+          type: string
+          example: "A"
+  employee_update:
+    type: object
+    xml:
+      name: employee
+    properties:
+      employeeID:
+        required: true
+        type: integer
+        example: 12345
+      employeeStatus:
+        required: true
+        type: string
+        example: "A"
+  response_success:
+    type: object
+    properties:
+      status:
+        type: integer
+        required: true
+        example:
+          200
+      message:
+        type: string
+        required: true
+        example:
+          "Success"
+  response_fail:
+    type: object
+    properties:
+      status:
+        type: integer
+        required: true
+        example:
+          500
+      message:
+        type: string
+        required: true
+        example:
+          "Internal Server Error"
+

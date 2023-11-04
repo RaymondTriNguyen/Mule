@@ -1,0 +1,79 @@
+#%RAML 1.0
+title: employee-api
+baseUri: http://localhost:8080/emp-api
+securitySchemes:
+  oauth_2_0: !include /exchange_modules/2816cb74-07ac-40bd-8b0d-eea798d51cba/oauth_authentication/1.0.0/oauth_authentication.raml      
+traits:
+  x-mock-response-id: !include /exchange_modules/2816cb74-07ac-40bd-8b0d-eea798d51cba/x-mock-response-id/1.0.0/x-mock-response-id.raml
+  id-request: !include /exchange_modules/2816cb74-07ac-40bd-8b0d-eea798d51cba/id-request/1.0.0/id-request.raml
+  queryParams-trail: !include /traits/query_trait.raml
+uses:
+  employee_data_type: library/library.raml
+/create-employee:
+  description: This resource used to register a employee 
+  post:
+    body:
+      application/json:
+        type: array
+        items:
+          type: employee_data_type.employee_create
+        example: !include /examples/employee_array_example.json
+    responses:
+      200:
+        body:
+          application/json:
+            type: employee_data_type.response_success
+            example: !include /examples/response_success_example.json
+      500:
+        body:
+          application/json:
+            type: employee_data_type.response_fail
+            example: !include /examples/response_failure.json
+/update-employee:
+  description: This resource used to update a employee
+  put:
+    body:
+      application/xml:
+        type: employee_data_type.employee_update
+        example: !include /examples/employee_example.xml
+    responses:
+      200:
+        body:
+          application/xml:
+            type: employee_data_type.response_success
+            example: !include /examples/response_success_example.xml              
+      500:
+        body:
+          application/xml:            
+            type: employee_data_type.response_fail
+            example: !include /examples/response_failure_example.xml
+/get-employee:
+  description: This resource is used to get employee by Employee ID, Employee Status
+  get:
+    is:
+      [queryParams-trail]
+    responses:
+      200:
+        body:
+          application/json:
+            type: employee_data_type.employee_create
+            example: !include /examples/employee_example.json        
+      500:
+        body:
+          application/json:
+            type: employee_data_type.response_fail
+            example: !include /examples/response_failure.json              
+/delete-employee/{employeeID}/{employeeName}:
+  description: This resource is used to delete one employee
+  delete:
+    responses:
+      200:
+        body:
+          application/json:
+            type: employee_data_type.response_success
+            example: !include /examples/response_success_example.json
+      500:
+        body:
+          application/json:
+            type: employee_data_type.response_fail
+            example: !include /examples/response_failure.json             

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="get:\get-employee:employee-api-fragment-demo-config" doc:id="a4bb4602-b358-489f-9ae4-ee52631b1022" >
+		<flow-ref doc:name="Flow Reference" doc:id="9bdb626d-bbec-4120-9d52-a306f6b53df3" name="getemployeesubflowSub_Flow"/>
+		<ee:transform doc:name="Transform Message" doc:id="bba45bcf-de73-49f2-a462-8ae992f87d6a" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+  employeeID: 12345,
+  employeeName: "Huu",
+  employeeStatus: "A"
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>

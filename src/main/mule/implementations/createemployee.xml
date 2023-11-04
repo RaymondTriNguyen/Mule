@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="post:\create-employee:application\json:employee-api-fragment-demo-config" doc:id="a09aa1d3-329f-409a-bae7-dafc2e8a8a94" >
+		<flow-ref doc:name="Flow Reference" doc:id="eae54a45-31e7-40bc-89ab-53b9cc107ef9" name="createemployeesubflowSub_Flow"/>
+		<ee:transform doc:name="Transform Message" doc:id="39f6ec03-ba9c-4a2a-a360-eee3cb48c136" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+  status: 200,
+  message: "Success"
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>

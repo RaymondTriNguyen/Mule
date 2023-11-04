@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="put:\update-employee:application\xml:employee-api-fragment-demo-config" doc:id="852fa8dd-b8c4-454a-9d63-9638d306c808" >
+		<flow-ref doc:name="Flow Reference" doc:id="43b25d2b-ccac-4e12-a55c-2c89f913a6ad" name="updateemployeesubflowSub_Flow"/>
+		<ee:transform doc:name="Transform Message" doc:id="193af519-84ae-45e3-a6bc-6eabb2cb1aac" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+---
+{
+  response_success: {
+    status: "200",
+    message: "success"
+  }
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
